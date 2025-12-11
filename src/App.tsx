@@ -21,7 +21,7 @@ const options = {
     },
   },
   tooltip: {
-    headerFormat: null,
+    headerFormat: "",
     pointFormat:
       "{point.fromNode.name} \u2192 {point.toNode.name}: {point.weight:.2f} " +
       "quads",
@@ -62,7 +62,7 @@ const options = {
 
         ["Applied", "Screening", TOTAL_SCREENING],
       ],
-      type: "sankey",
+      type: "sankey" as const,
     },
   ],
 };

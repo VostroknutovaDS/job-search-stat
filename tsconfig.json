@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "types": [],
     "sourceMap": true,
@@ -19,4 +20,5 @@
     "allowJs": true,
     "checkJs": true
   },
+  "include": ["src"]
 }
