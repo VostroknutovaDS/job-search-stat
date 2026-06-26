@@ -1,7 +1,7 @@
 import type { State } from "../../entities/state";
 import type { Statistics } from "../../entities/statistics";
 import { STATES } from "../../shared/application-states";
-import styles from "./Form.module.css";
+import styles from "./Form.module.scss";
 
 interface FormProps {
   onApplicationStateChange: (newState: State) => void;

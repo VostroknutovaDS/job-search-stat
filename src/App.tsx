@@ -2,7 +2,7 @@ import { Chart, Title } from "@highcharts/react";
 import { useRef, useState } from "react";
 import * as Highcharts from "highcharts";
 import "highcharts/modules/sankey";
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 import conf from "./config.json";
 import Form from "./widgets/form/Form";
 import type { Statistics } from "./entities/statistics";
