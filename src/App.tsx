@@ -7,6 +7,7 @@ import conf from "./config.json";
 import Form from "./widgets/form/Form";
 import type { Statistics } from "./entities/statistics";
 import type { State } from "./entities/state";
+import { Heatmap } from "./widgets/heatmap/Heatmap";
 
 const TOTAL_APPLIED = conf["Applied"];
 const TOTAL_SCREENING = conf["Screening"];
@@ -22,11 +23,11 @@ export function App() {
   });
 
   const handleApplicationStateChange = (newState: State) => {
-  setApplicationState((prev) => ({
-    ...prev,
-    ...newState,
-  }));
-};
+    setApplicationState((prev) => ({
+      ...prev,
+      ...newState,
+    }));
+  };
 
   const chartComponentRef = useRef(null);
 
@@ -98,12 +99,21 @@ export function App() {
   };
 
   return (
-    <div className={styles.app}>
-      <Chart highcharts={Highcharts} options={options} ref={chartComponentRef}>
-        <Title>{options.title.text}</Title>
-      </Chart>
-      <Form onApplicationStateChange={handleApplicationStateChange}></Form>
-    </div>
+    <>
+      <div className={styles.app}>
+        <div className={styles.chart}>
+          <div className={styles.chart__diagram}>
+            <Chart
+              highcharts={Highcharts}
+              options={options}
+              ref={chartComponentRef}
+            ></Chart>
+          </div>
+          <Form onApplicationStateChange={handleApplicationStateChange}></Form>
+        </div>
+        <Heatmap></Heatmap>
+      </div>
+    </>
   );
 }
 
