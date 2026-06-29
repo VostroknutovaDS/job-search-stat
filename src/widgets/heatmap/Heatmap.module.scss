@@ -1,0 +1,26 @@
+$grid-gap: 2px;
+$day-size: 12px;
+
+.week {
+  display: flex;
+  flex-direction: column;
+  row-gap: $grid-gap;
+}
+
+.weekdays {
+  justify-content: space-between;
+}
+
+.grid {
+  display: flex;
+  column-gap: $grid-gap;
+}
+
+.day {
+  width: $day-size;
+  height: $day-size;
+}
+
+.weekday {
+  font-size: $day-size;
+}

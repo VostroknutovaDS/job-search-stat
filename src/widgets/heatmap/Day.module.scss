@@ -1,0 +1,23 @@
+$active-color: #FF3E9B;
+
+.disabled {
+  background-color: darken($color: #000, $amount: 1);
+}
+
+.active {
+  &--0 {
+    opacity: 0.10;
+    background-color: $active-color;
+  }
+  &--2 {
+    opacity: 0.35;
+    background-color: $active-color;
+  }
+  &--5 {
+    opacity: 0.65;
+    background-color: $active-color;
+  }
+  &--7 {
+    background-color: $active-color;
+  }
+}

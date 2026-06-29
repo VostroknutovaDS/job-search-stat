@@ -4,9 +4,9 @@
 
 .chart {
   display: flex;
-  height: 40vh;
 }
 
 .chart__diagram {
   flex-grow: 1;
+  max-width: 80%;
 }
