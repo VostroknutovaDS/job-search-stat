@@ -1,12 +1,12 @@
-$active-color: #FF3E9B;
+$active-color: #ff3e9b;
 
 .disabled {
-  background-color: darken($color: #000, $amount: 1);
+  background-color: black;
 }
 
 .active {
   &--0 {
-    opacity: 0.10;
+    opacity: 0.1;
     background-color: $active-color;
   }
   &--2 {
@@ -20,4 +20,25 @@ $active-color: #FF3E9B;
   &--7 {
     background-color: $active-color;
   }
+}
+
+[role="tooltip"] {
+  visibility: hidden;
+  position: absolute;
+  bottom: 1rem;
+  width: max-content;
+  background-color: black;
+  color: wheat;
+  padding: 4px;
+  border-radius: 4px;
+  z-index: 1;
+  left: -3.5rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+[aria-describedby]:hover + [role="tooltip"] {
+  visibility: visible;
 }

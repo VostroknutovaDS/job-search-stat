@@ -17,9 +17,26 @@ export function Day({
   day: HeatmapDay | null;
   className?: string;
 }) {
+  const tooltipText = day?.count
+    ? [
+        day?.count,
+        "contributions on",
+        day.date.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+        }),
+      ].join(" ")
+    : "No contribution";
+
   return (
-    <div
-      className={clsx(styles[getDayColor(day ? day.count : -1)], className)}
-    ></div>
+    <div className={styles.wrapper}>
+      <div
+        className={clsx(styles[getDayColor(day ? day.count : -1)], className)}
+        aria-describedby={"tooltip-" + day?.date.toISOString()}
+      ></div>
+      <div id={"tooltip-" + day?.date.toISOString()} role="tooltip">
+        {tooltipText}
+      </div>
+    </div>
   );
 }
