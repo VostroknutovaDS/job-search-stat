@@ -13,9 +13,11 @@ function getDayColor(count: number): string {
 export function Day({
   day,
   className,
+  onClick,
 }: {
   day: HeatmapDay | null;
   className?: string;
+  onClick: () => void;
 }) {
   const tooltipText = day?.count
     ? [
@@ -29,7 +31,7 @@ export function Day({
     : "No contribution";
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClick}>
       <div
         className={clsx(styles[getDayColor(day ? day.count : -1)], className)}
         aria-describedby={"tooltip-" + day?.date.toISOString()}
